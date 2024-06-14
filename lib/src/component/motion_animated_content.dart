@@ -172,9 +172,11 @@ class MotionAnimatedContentState extends State<MotionAnimatedContent>
       maintainState: true,
       visible: visible && !_dragging,
       child: Transform.translate(
-          offset: offset,
-          child:
-              !_dragging ? widget.child : SizedBox.fromSize(size: _dragSize)),
+        offset: offset,
+        child: Material(
+          child: !_dragging ? widget.child : SizedBox.fromSize(size: _dragSize),
+        ),
+      ),
     );
   }
 
